@@ -1,0 +1,12 @@
+{
+  "name": "safecreative",
+  "description": "Safe Creative plugins for AI coding agents",
+  "owner": { "name": "Safe Creative", "url": "https://platform.safecreative.org" },
+  "plugins": [
+    {
+      "name": "safecreative-platform",
+      "source": "./",
+      "description": "Integrate the Safe Creative Platform API: events with a qualified timestamp, certifications and webhooks."
+    }
+  ]
+}
