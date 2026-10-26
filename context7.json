@@ -1,0 +1,14 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Safe Creative Platform",
+  "description": "API to register events with a gapless sequence, chained hash and qualified timestamp, and to request signed certifications anyone can verify.",
+  "folders": ["docs", "skills"],
+  "excludeFolders": [".claude-plugin"],
+  "rules": [
+    "Use a test key (sc_test_...) while integrating: test events are free and have no probative value; with live keys (sc_live_...) every event is permanent and costs one credit.",
+    "Derive client_ref from the source fact and retry a failed or unknown POST /v1/events with the same client_ref and the same content: you get the original event, never a duplicate.",
+    "The body of POST /v1/events depends on the channel modality (GET /v1/channel): payload or a multipart file on content channels, hash and hash_alg on hash-only channels.",
+    "Certifications are asynchronous: POST /v1/certifications answers 202; poll GET /v1/certifications/{id} or use the certification.completed webhook.",
+    "Decide on the error code and retryable, never on the message."
+  ]
+}
