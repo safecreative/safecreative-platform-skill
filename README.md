@@ -34,6 +34,18 @@ Then give your agent a test key, never a live one while developing:
 export SC_API_KEY=sc_test_...        # created in https://platform.safecreative.org/console
 ```
 
+## What this plugin runs and connects to
+
+- **MCP server (Claude Code plugin only):** installing the plugin adds the remote MCP server
+  `safecreative` at `https://platform.safecreative.org/mcp`. On first use Claude Code opens the OAuth sign-in: you log in
+  with your Safe Creative account, choose one channel and the mode (test by default) and authorize it. The plugin ships no
+  credentials, and the access can be revoked at any time in the console (the delegated key marked "Agent (OAuth)"). If
+  you already added a server named `safecreative` by hand, remove one of the two to avoid duplicate tools.
+- **Scripts:** `scripts/sc_api.py` sends requests to the Safe Creative Platform API (`https://platform.safecreative.org/v1`,
+  or `SC_API_BASE`) with the key in `SC_API_KEY`, only when you or your agent run it. `sc_hash.py` and
+  `sc_verify_webhook.py` work locally and send nothing.
+- Nothing else is fetched or sent; the skill itself is documentation.
+
 ## Development
 
 Safe Creative maintains the skill alongside the platform and publishes each version here; issues and suggestions are
