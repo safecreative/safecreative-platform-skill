@@ -1,9 +1,16 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
+  "url": "https://context7.com/safecreative/safecreative-platform-skill",
+  "public_key": "pk_Aq1h0KNrnGr3TLLJBWSYD",
   "projectTitle": "Safe Creative Platform",
   "description": "API to register events with a gapless sequence, chained hash and qualified timestamp, and to request signed certifications anyone can verify.",
-  "folders": ["docs", "skills"],
-  "excludeFolders": [".claude-plugin"],
+  "folders": [
+    "docs",
+    "skills"
+  ],
+  "excludeFolders": [
+    ".claude-plugin"
+  ],
   "rules": [
     "Use a test key (sc_test_...) while integrating: test events are free and have no probative value; with live keys (sc_live_...) every event is permanent and costs one credit.",
     "Derive client_ref from the source fact and retry a failed or unknown POST /v1/events with the same client_ref and the same content: you get the original event, never a duplicate.",
