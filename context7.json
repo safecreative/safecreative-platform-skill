@@ -1,7 +1,6 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
   "url": "https://context7.com/safecreative/safecreative-platform-skill",
-  "public_key": "pk_Aq1h0KNrnGr3TLLJBWSYD",
   "projectTitle": "Safe Creative Platform",
   "description": "API to register events with a gapless sequence, chained hash and qualified timestamp, and to request signed certifications anyone can verify.",
   "folders": [
