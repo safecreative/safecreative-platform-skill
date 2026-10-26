@@ -22,7 +22,7 @@ declared fact is true. Do not write code, comments or UI text that claims otherw
 - **Base URL**: `https://platform.safecreative.org/v1`. Read it from configuration (e.g. `SC_API_BASE`) so it can change.
 - **Auth**: `Authorization: Bearer <key>`. A key belongs to **one channel** and decides the **mode**: `sc_live_…` (real,
   one credit per event, probative value) or `sc_test_…` (same API and contract, separate chain, simulated timestamps, no
-  cost, no probative value, purged after 30 days). Read the key from an environment variable or secret store (e.g.
+  cost, no probative value, deleted once the channel has had no test events for 30 days). Read the key from an environment variable or secret store (e.g.
   `SC_API_KEY`); never hardcode it, log it or commit it. **Develop and test with a `sc_test_` key.**
 - Channels and keys are created only in the console (platform.safecreative.org/console); the API cannot create them.
 - Each channel has a **modality**, fixed at creation: `content` (JSON `payload` or a file) or `hash_only` (only a digest is

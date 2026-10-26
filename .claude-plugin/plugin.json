@@ -1,6 +1,6 @@
 {
   "name": "safecreative-platform",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Integrate the Safe Creative Platform API: register events with a qualified timestamp, request verifiable certifications and verify webhooks, with idempotent retries and test keys.",
   "author": {
     "name": "Safe Creative",
