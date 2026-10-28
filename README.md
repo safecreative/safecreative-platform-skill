@@ -16,8 +16,9 @@ The same folder is packaged for each kind of client:
 
 | File | For |
 |---|---|
-| `plugin.json` | [Agent Plugins 1.0](https://agent-plugins.org) clients (Codex, Cursor, GitHub Copilot / VS Code, Kiro…) |
+| `plugin.json`, `mcp.json` | [Agent Plugins 1.0](https://agent-plugins.org) clients (ChatGPT and Codex, Cursor, GitHub Copilot / VS Code, Kiro…); `plugin.json` also carries the ChatGPT and Codex directory listing |
 | `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` | Claude Code plugin and marketplace |
+| `assets/icon.png` | Icon for both |
 
 ## Install
 
@@ -38,8 +39,9 @@ export SC_API_KEY=sc_test_...        # created in https://platform.safecreative.
 
 ## What this plugin runs and connects to
 
-- **MCP server (Claude Code plugin only):** installing the plugin adds the remote MCP server
-  `safecreative-platform` at `https://platform.safecreative.org/mcp`. On first use Claude Code opens the OAuth sign-in: you log in
+- **MCP server:** installing the plugin adds the remote MCP server `safecreative-platform` at
+  `https://platform.safecreative.org/mcp` (declared in `.claude-plugin/plugin.json` for Claude Code and in `mcp.json` for
+  Agent Plugins clients). On first use the client opens the OAuth sign-in: you log in
   with your Safe Creative account, choose one channel and the mode (test by default) and authorize it. The plugin ships no
   credentials, and the access can be revoked at any time in the console (the delegated key marked "Agent (OAuth)"). It is
   the same server as the [Safe Creative Platform connector](https://claude.ai/directory/296ae4ea-7ebe-4975-8051-dec5ebfa7b08) in Claude's Connectors Directory: with both
