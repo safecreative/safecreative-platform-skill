@@ -1,13 +1,13 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "safecreative-platform",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Integrate the Safe Creative Platform API: register events with a qualified timestamp, request verifiable certifications and verify webhooks, with idempotent retries and test keys.",
   "author": {
     "name": "Safe Creative",
     "url": "https://platform.safecreative.org"
   },
-  "homepage": "https://platform.safecreative.org/docs",
+  "homepage": "https://platform.safecreative.org",
   "repository": "https://github.com/safecreative/safecreative-platform-skill",
   "license": "Apache-2.0",
   "keywords": [

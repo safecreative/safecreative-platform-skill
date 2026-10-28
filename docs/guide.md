@@ -21,7 +21,7 @@ control**.
 
 | Concept | What it is |
 |---|---|
-| **Channel** | The conduit for one type of process. Created in the console; its configuration is **sealed with a timestamp** at creation (a commitment made before the facts). Changes create **versions**; none is ever rewritten. |
+| **Channel** | The conduit for one type of process. Created in the console; its configuration is **sealed with a timestamp** at creation (a commitment made before the facts). Changes create **versions**; none is ever rewritten. Each account can have up to 10 channels; if you need more, ask support. |
 | **Event** | One declaration sent to the channel. Immutable: it gets a sequence number, digest, timestamp coverage and chaining. |
 | **Modality** | Per channel: **content** (you send the data — a JSON token from your process, or a file — and the certification is self-contained) or **hash-only** (you send the digest; the content never leaves your perimeter). |
 | **Declarant** | The person or entity on whose behalf events are declared. Designated when configuring the channel; part of the sealed configuration. In reports it appears as a declaration of the channel owner. |
@@ -132,6 +132,9 @@ notified via the `certification.completed` webhook. When completed you'll have:
 Registering and certifying are separate moments: evidence accumulates quietly and you may
 never need it — like insurance. Certify when you do.
 
+Want to see one? The [example certification](/docs/example-certification) is a real one, from a
+Safe Creative channel: its two reports, its evidence and its verification.
+
 ## 7. Webhooks
 
 Configure endpoints in the console and pick what to receive: `certification.completed` /
@@ -202,8 +205,8 @@ Your sequence **does not break**: events arriving with an exhausted balance are 
 received, sealed and chained, marked **unpaid** — up to a limit. While you have unpaid events:
 
 - no certifications can be issued (`account_not_operational` — "account not operational");
-- if the unpaid limit is reached (5,000 events per account), new registrations are rejected
-  (`unpaid_limit_exceeded`).
+- if the unpaid limit is reached (5,000 events per account, or 100 if the account has not made any
+  purchase yet), new registrations are rejected (`unpaid_limit_exceeded`).
 
 When you top up, unpaid events are **charged automatically** and everything returns to normal —
 none of their proof elements changes. Recommendation: configure `balance.low` and never get here.
